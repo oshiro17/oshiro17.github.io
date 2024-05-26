@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<link rel="icon" type="image/png" href="profile-pic.jpg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<audio id="successAudio" src="audio.m4a"></audio>
+<audio id="Audio1" src="audio6.m4a"></audio>
+<audio id="Audio2" src="audio7.m4a"></audio>
+<audio id="pageLoadAudio" src="audio9.m4a"></audio>
+
+<title>のしろ自己紹介ページ</title>
+<style>
+    body {
+        font-family: 'Helvetica', 'Arial', sans-serif;
+        text-align: center;
+        background-color: #e0f7fa; /* 淡い水色の背景 */
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #ffffff; /* 白背景を保持 */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 20px auto;
+    }
+    h1 {
+        color: #00796b; /* 濃い水色 */
+    }
+    a {
+        display: block;
+        margin: 10px;
+        color: #0097a7; /* 明るい水色 */
+        text-decoration: none;
+    }
+    .skill {
+        margin: 20px 0;
+        font-style: italic;
+    }
+    .footer {
+        font-size: 0.9em;
+        margin-top: 40px;
+        color: #004d40; /* 濃い水色 */
+    }
+    button {
+        background-color: #4dd0e1; /* 明るい水色 */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background-color: #26c6da; /* ボタンホバー時の色 */
+    }
+    #retryButton {
+        display: none;
+        margin: 0 auto;
+    }
+    .mbti-buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 横に2列 */
+        gap: 10px; /* ボタン間の隙間 */
+        margin-bottom: 20px; /* 下マージンを追加 */
+    }
+    .mbti-buttons button {
+        padding: 10px;
+        background-color: #4dd0e1; /* 明るい水色 */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .mbti-buttons button:hover {
+        background-color: #26c6da; /* ボタンホバー時の色 */
+    }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      var pageLoadAudio = document.getElementById('pageLoadAudio');
+      pageLoadAudio.currentTime = 0;
+      pageLoadAudio.play();
+  });
+
+  function calculateCompatibility() {
+      var name = document.getElementById('name').value;
+      if (name === "") {
+          alert('お名前教えてよお');
+          return;
+      }
+      var compatibilityScore = Math.floor(Math.random() * 101);
+      document.getElementById('compatibilityResult').innerText = name + 'さんとのののかのラブラブ度は ' + compatibilityScore + ' 万％です！';
+  }
+
+  function showCompatibility(type) {
+      var compatibilityText;
+      switch (type) {
+          case 'ISTP':
+              compatibilityText = 'あなたとののかの科学的な相性は一番最強です！ENFPとISTPは全ての性格タイプの中で最高とも言える相性を誇っています。お互い根底で考えている価値観の相性が良いだけでなく、弱点を補い合えるという点で優れたパートナーとなることができるでしょう。得意分野という点では両者の性格タイプで異なり、ENFPは圧倒的なコミュニケーション能力で周囲の人との関係性構築が得意という反面、細かな作業が苦手といった一面を持ちます。その一方で、ISTPはとにかく細かい作業が得意で、今まで見たことないものを作る時であっても、自分の今までの経験を活かしてやり遂げることができます。';
+              var successAudio = document.getElementById('successAudio');
+              successAudio.currentTime = 0;
+              successAudio.play();
+              break;
+          case 'ESFP':
+              compatibilityText = 'ENFPとエンターテイナー型であるESFPは、お互いの性格が似たもの同士という観点で相性が良いと考えられます。両者は全ての性格タイプの中でもトップレベルのコミュニケーション能力を持っているため、パーティなど大勢がいる場所であっても非常に目立つ存在となるはずです。また、他人に喜んでもらうという点に強い幸福感を感じる性格でもあるため、初対面から「この人は気が合いそうな人だ」と感じることでしょう。行動に関する価値観が非常に似ているため、新しい物事にチャレンジする時であってもお互いに手を取り合っていくことができます。知らないことを目の前にしても、うろたえてしまうのではなく楽しさや面白さを感じながら立ち向かっていくことができるはずです。';
+              var successAudio = document.getElementById('successAudio');
+              successAudio.currentTime = 0;
+              successAudio.play();
+              break;
+          case 'ENFP':
+              compatibilityText = 'あなたとののかの科学的な相性は最強です！';
+              var successAudio = document.getElementById('successAudio');
+              successAudio.currentTime = 0;
+              successAudio.play();
+              break;
+          case 'INFP':
+          case 'ISTJ':
+              compatibilityText = 'あなたとのののかの科学的な相性は最悪です！';
+              var audio2 = document.getElementById('Audio2');
+              audio2.currentTime = 0;
+              audio2.play();
+              break;
+          default:
+              compatibilityText = 'あなたとののかの科学的な相性は普通です！';
+              var audio1 = document.getElementById('Audio1');
+              audio1.currentTime = 0;
+              audio1.play();
+              break;
+      }
+      document.getElementById('mbtiResult').innerText = compatibilityText;
+      document.querySelector('.mbti-buttons').style.display = 'none';
+      document.getElementById('retryButton').style.display = 'block';
+  }
+
+  function retryCompatibility() {
+      document.querySelector('.mbti-buttons').style.display = 'grid';
+      document.getElementById('mbtiResult').innerText = '';
+      document.getElementById('retryButton').style.display = 'none';
+  }
+
+  function findSameC(c) {
+      const aAr = "あかさたなはまやらわんぁゃ";
+      const iAr = "いきしちにひみりぃ";
+      const uAr = "うくすつぬふむゆるぅゅ";
+      const eAr = "えけせてねへめれ";
+      const oAr = "おこそとのほもよろをょ";
+
+      if (aAr.includes(c)) return 1;
+      if (iAr.includes(c)) return 2;
+      if (uAr.includes(c)) return 3;
+      if (eAr.includes(c)) return 4;
+      if (oAr.includes(c)) return 5;
+      return 0;
+  }
+
+  function delay(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  async function calculateHiraganaCompatibility() {
+    saveInputString();
+      const input = document.getElementById('inputString').value.trim();
+      if (!input.startsWith('ののか')) {
+          document.getElementById('hiraganaResult').innerText = '入力された値の最初にののかを含んでください！';
+          return;
+      }
+      if (!/^[ゃゅょあいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん]+$/.test(input)) {
+          alert('あなたの名前はエラーな名前です。点々、小文字には対応しません。');
+          return;
+      }
+      let nArry = Array.from(input).map(c => findSameC(c));
+      let output = document.getElementById('hiraganaResult');
+      output.innerText = ''; 
+
+      while (nArry.length > 2) {
+          let tmpArry = [];
+          for (let i = 0; i < nArry.length - 1; i++) {
+              tmpArry[i] = (nArry[i] + nArry[i + 1]) % 10;
+          }
+          output.innerText += nArry.join('') + '\n';
+          await delay(1000); 
+          nArry = tmpArry;
+      }
+      let score = nArry.length > 1 ? (nArry[0] * 10 + nArry[1]) : nArry[0] * 10;
+      output.innerText += "君たちの相性は" + score + "パーセント";
+
+      if (score >= 90) {
+          var successAudio = document.getElementById('successAudio');
+          successAudio.currentTime = 0;
+          successAudio.play();
+      } else if (score <= 10) {
+          var audio2 = document.getElementById('Audio2');
+          audio2.currentTime = 0;
+          audio2.play();
+      } else {
+          var audio1 = document.getElementById('Audio1');
+          audio1.currentTime = 0;
+          audio1.play();
+      }
+  }
+</script>
+</head>
+<body>
+  <div class="container" style="display:none;">
+    <iframe width="1" height="1" src="https://www.youtube.com/watch?v=iqGHxcTPRfI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <div class="container">
+    <img src="profile-pic.jpg" alt="プロフィール写真" class="profile-pic">
+    <h1>こんにちは！</h1>
+    <h1>please call me のしろ</h1>
+    <p>私のすきなことは編み物です。また、ラーメンが大好きです！</p>
+    <div class="skill">おすすめのラーメン屋についてはメールでお聞きください。</div>
+    <a href="https://twitter.com/1nonoka7" target="_blank">Twitter:  @1nonoka7</a>
+    <a href="https://oshiro17.github.io/avalon/" target="_blank">人狼(人狼よりも面白い)</a>
+    <a href="https://www.instagram.com/noshiro_dayo" target="_blank">Instagram: @ora_nonoka</a>
+    <a href="https://youtube.com/shorts/ksliVLlCIP8?feature=share" target="_blank">YouTube Channel Page</a>
+  </div>
+
+  <div class="container">
+    <h2>あなたとののかの科学的な相性診断</h2>
+    <p>MBTIタイプを選択してください</p>
+    <div class="mbti-buttons">
+      <button onclick="showCompatibility('ISTJ')">ISTJ</button>
+      <button onclick="showCompatibility('ISFJ')">ISFJ</button>
+      <button onclick="showCompatibility('INFJ')">INFJ</button>
+      <button onclick="showCompatibility('INTJ')">INTJ</button>
+      <button onclick="showCompatibility('ISTP')">ISTP</button>
+      <button onclick="showCompatibility('ISFP')">ISFP</button>
+      <button onclick="showCompatibility('INFP')">INFP</button>
+      <button onclick="showCompatibility('INTP')">INTP</button>
+      <button onclick="showCompatibility('ESTP')">ESTP</button>
+      <button onclick="showCompatibility('ESFP')">ESFP</button>
+      <button onclick="showCompatibility('ENFP')">ENFP</button>
+      <button onclick="showCompatibility('ENTP')">ENTP</button>
+      <button onclick="showCompatibility('ESTJ')">ESTJ</button>
+      <button onclick="showCompatibility('ESFJ')">ESFJ</button>
+      <button onclick="showCompatibility('ENFJ')">ENFJ</button>
+      <button onclick="showCompatibility('ENTJ')">ENTJ</button>
+    </div>
+    <p id="mbtiResult"></p>
+    <button id="retryButton" onclick="retryCompatibility()">もう一度診断する</button>
+  </div> 
+
+  <div class="container">
+    <h1>もっと科学的なひらがな相性診断</h1>
+    <p>”ののか”の後ろにあなたの名前を入力</p>
+    <p>例）ののかたろう</p>
+    <input type="text" id="inputString" placeholder="ののか＋あなたの名前をひらがなで入力" value="ののか">
+    <button onclick="calculateHiraganaCompatibility()">相性を診断する</button>
+    <pre id="hiraganaResult"></pre>
+  </div>
+
+  <div class="footer">
+    &copy; 2024 プロフィールページ. All rights reserved.
+  </div>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字列入力フォーム</title>
+</head>
+<body> -->
+
+    <!-- <p>”ののか”の後ろにあなたの名前を入力</p>
+    <p>例）ののかたろう</p>
+    <input type="text" id="inputString" placeholder="ののか＋あなたの名前をひらがなで入力" value="ののか">
+    <button onclick="saveInputString()">相性を診断する</button>
+    <pre id="hiraganaResult"></pre> -->
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <script>
+        // Firebaseの初期化
+        const firebaseConfig = {
+            apiKey: "AIzaSyCIp3X_o7lli9GvXP-eUDnwLcvEDS4BcsQ",
+            authDomain: "my-profile-7ce11.firebaseapp.com",
+            databaseURL: "https://my-profile-7ce11-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "my-profile-7ce11",
+            storageBucket: "my-profile-7ce11.appspot.com",
+            messagingSenderId: "1081923421775",
+            appId: "1:1081923421775:web:d4cf44121e1827843f4c3a",
+            measurementId: "G-TMNW2YWM31"
+        };
+
+        // Firebaseの初期化
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Firestore にデータを保存する関数
+        function saveInputString() {
+            const inputString = document.getElementById('inputString').value;
+
+            // Firestore コレクションにデータを保存
+            db.collection('inputs').add({
+                input: inputString,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            }).then(() => {
+                // alert('データが保存されました！');
+            }).catch((error) => {
+                console.error('Error adding document: ', error);
+            });
+        }
+    </script>
+<!-- </body> -->
+</html>
