@@ -168,7 +168,7 @@
   }
 
   async function calculateHiraganaCompatibility() {
-    saveInputString();
+    // saveInputString();
       const input = document.getElementById('inputString').value.trim();
       if (!input.startsWith('ののか')) {
           document.getElementById('hiraganaResult').innerText = '入力された値の最初にののかを含んでください！';
@@ -305,19 +305,19 @@
         const db = firebase.firestore();
 
         // Firestore にデータを保存する関数
-        function saveInputString() {
-            const inputString = document.getElementById('inputString').value;
+        // function saveInputString() {
+        //     const inputString = document.getElementById('inputString').value;
 
-            // Firestore コレクションにデータを保存
-            db.collection('inputs').add({
-                input: inputString,
-                timestamp: firebase.firestore.FieldValue.serverTimestamp()
-            }).then(() => {
-                // alert('データが保存されました！');
-            }).catch((error) => {
-                console.error('Error adding document: ', error);
-            });
-        }
+        //     // Firestore コレクションにデータを保存
+        //     db.collection('inputs').add({
+        //         input: inputString,
+        //         timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        //     }).then(() => {
+        //         // alert('データが保存されました！');
+        //     }).catch((error) => {
+        //         console.error('Error adding document: ', error);
+        //     });
+        // }
     </script>
 <!-- </body> -->
 </html>
