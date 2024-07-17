@@ -394,7 +394,7 @@ const FYBELandingPage = () => {
                 <img src="icon.png" alt="アプリのアイコン" className="w-16 h-16 ml-4" />
               </div>
               <video controls className="mt-4 rounded-lg w-full h-auto mx-auto">
-                <source src="/IMG_7557.MOV" type="video/mp4" />
+                <source src="/IMG_7557.mp4" type="video/mp4" />
                 お使いのブラウザは動画タグに対応していません。
               </video>
             </div>
