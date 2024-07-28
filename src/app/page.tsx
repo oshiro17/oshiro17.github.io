@@ -20,6 +20,7 @@ import {
   PackageCheck,
 } from "lucide-react";
 import ContactCard from "@/components/ContactCard";
+import Profile from "@/components/Profile";
 const animationStyles = `
   @keyframes fall {
     0% {
@@ -283,84 +284,7 @@ const FYBELandingPage = () => {
             </div>
             <h2 className="text-3xl font-bold text-center">自己紹介</h2>
           </div>
-          <div className="bg-[#FFE4E1] p-8 rounded-lg max-w-2xl mx-auto">
-            <h3 className="text-2xl font-semibold mb-4">大城希乃樺</h3>
-            <p className="mb-4">沖縄県立向陽高校卒業</p>
-            <p className="mb-4">42Tokyo所属</p>
-            <h4 className="text-xl font-semibold mb-2">好きな食べ物</h4>
-            <ul className="list-disc list-inside mb-4">
-              <li>お寿司</li>
-              <li>焼肉</li>
-              <li>ラーメン</li>
-            </ul>
-            <h4 className="text-xl font-semibold mb-2">SNS & Contacts</h4>
-            <div className="flex space-x-4 items-center">
-              <a
-                href="https://www.youtube.com/ののかちゃんねる"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#ffb8b3]"
-              >
-                <Youtube size={24} />
-              </a>
-              <a
-                href="https://www.youtube.com/ののかちゃんねる"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#ffb8b3]"
-              >
-                ののかちゃんねる
-              </a>
-              <a
-                href="https://github.com/oshiro17"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#ffb8b3]"
-              >
-                <Github size={24} />
-              </a>
-              <a
-                href="https://github.com/oshiro17"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#ffb8b3]"
-              >
-                @oshiro17
-              </a>
-              <a
-                href="https://twitter.com/1nonoka7"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#ffb8b3]"
-              >
-                <X size={24} />
-              </a>
-              <a
-                href="https://twitter.com/1nonoka7"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#ffb8b3]"
-              >
-                @1nonoka7
-              </a>
-              <a
-                href="https://www.instagram.com/ora_nonoka"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#ffb8b3]"
-              >
-                <Instagram size={24} />
-              </a>
-              <a
-                href="https://www.instagram.com/ora_nonoka"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#ffb8b3]"
-              >
-                @ora_nonoka
-              </a>
-            </div>
-          </div>
+          <Profile/>
         </section>
 
         <style jsx>{`
