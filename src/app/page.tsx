@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import ContactCard from "@/components/ContactCard";
 import Profile from "@/components/Profile";
+import PayCard from "@/components/pay";
 const animationStyles = `
   @keyframes fall {
     0% {
@@ -341,6 +342,13 @@ const FYBELandingPage = () => {
             </div>
           </div>
         </section>
+                {/* @ts-ignore */}
+                <section  className={`mb-20 transition-opacity duration-1000 ${isVisible["mission"] ? "opacity-100" : "opacity-100" }`}>
+          <h2 className="text-3xl font-bold mb-8 text-center">
+            ののかを支援する
+          </h2>
+          <PayCard/>
+          </section>
 
         {/* @ts-ignore */}
         <section id="contact" className={`mb-20 transition-opacity duration-1000 ${isVisible.contact ? "opacity-100" : "opacity-20"}`}>
