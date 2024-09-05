@@ -22,6 +22,7 @@ import {
 import ContactCard from "@/components/ContactCard";
 import Profile from "@/components/Profile";
 import PayCard from "@/components/pay";
+import Tamaki from "@/components/tamaki";
 const animationStyles = `
   @keyframes fall {
     0% {
@@ -89,7 +90,7 @@ const FYBELandingPage = () => {
 
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputText(e.target.value + "おおしろののか");
+    setInputText("おおしろののか"+ e.target.value);
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -125,7 +126,7 @@ const FYBELandingPage = () => {
       ま: 1, み: 2, む: 3, め: 4, も: 5,
       や: 1, ゆ: 3, よ: 5,
       ら: 1, り: 2, る: 3, れ: 4, ろ: 5,
-      わ: 1, を: 5, ん: 1,
+      わ: 1, を: 5, ん: 1,ゅ:2,ゃ:1,ょ:3,っ:3,
       が: 1, ぎ: 2, ぐ: 3, げ: 4, ご: 5,
       ざ: 1, じ: 2, ず: 3, ぜ: 4, ぞ: 5,
       だ: 1, ぢ: 2, づ: 3, で: 4, ど: 5,
@@ -303,7 +304,8 @@ const FYBELandingPage = () => {
             `}</style>
 
             {/* @ts-ignore */}
-        <section id="mission-vision" className={`mb-20 transition-opacity duration-1000 ${isVisible["mission-vision"] ? "opacity-100" : "opacity-20" }`}>
+            <Tamaki/>
+        <section id="mission-vision" className={`mb-20 transition-opacity duration-1000 opacity-100`}>
           <h2 className="text-3xl font-bold mb-8 text-center">
             制作物
           </h2>
@@ -324,7 +326,7 @@ const FYBELandingPage = () => {
               </video>
             </div>
 
-            <div className="bg-[#FFE4E1] p-8 rounded-lg max-w-2xl mx-auto text-center">
+            {/* <div className="bg-[#FFE4E1] p-8 rounded-lg max-w-2xl mx-auto text-center">
               <h3 className="text-2xl font-semibold mb-4">アヴァロン</h3>
               <p>
                 アヴァロンは、策略と推理を駆使して勝利を目指す騙し合いのゲームです。人狼のように便利なアプリがなかったので、泣く泣く自分で作りました。
@@ -339,8 +341,9 @@ const FYBELandingPage = () => {
               >
                 アヴァロンで遊ぶ
               </a>
-            </div>
+            </div> */}
           </div>
+      {/* <Tamaki/>dd */}
         </section>
                 {/* @ts-ignore */}
                 <section  className={`mb-20 transition-opacity duration-1000 ${isVisible["mission"] ? "opacity-100" : "opacity-100" }`}>
