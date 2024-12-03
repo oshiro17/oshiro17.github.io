@@ -21,21 +21,21 @@ export const metadata: Metadata = {
     "大城",
     "アプリ開発",
   ],
-  openGraph: {
-    type: "website",
-    url: "https://oshiro17.github.io/",
-    title: "のんちゃんだよ",
-    description:
-      "趣味は編み物",
-    siteName: "のんちゃんだよ",
-    images: [
-      {
-        url: "https://oshiro17/github.io",
-        width: 1200,
-        height: 630,
-      },
-    ],
-  },
+  // openGraph: {
+  //   type: "website",
+  //   url: "https://oshiro17.github.io/",
+  //   title: "のんちゃんだよ",
+  //   description:
+  //     "趣味は編み物",
+  //   siteName: "のんちゃんだよ",
+  //   images: [
+  //     {
+  //       url: "https://oshiro17/github.io",
+  //       width: 1200,
+  //       height: 630,
+  //     },
+  //   ],
+  // },
 };
 
 export default function RootLayout({

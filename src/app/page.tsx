@@ -23,6 +23,7 @@ import ContactCard from "@/components/ContactCard";
 import Profile from "@/components/Profile";
 import PayCard from "@/components/pay";
 import Tamaki from "@/components/tamaki";
+
 const animationStyles = `
   @keyframes fall {
     0% {
@@ -35,7 +36,7 @@ const animationStyles = `
     }
   }
 
-.star, .heart {
+  .star, .heart {
     position: fixed;
     width: 30px;
     height: 30px;
@@ -44,11 +45,11 @@ const animationStyles = `
   }
 
   .star {
-    background-image: url('hart.png');
+    background-image: url(hart.png);
   }
 
   // .heart {
-  //   background-image: url('heart.png');
+  //   background-image: url(heart.png);
   // }
 
   .star:nth-child(1), .heart:nth-child(1) { left: 10%; animation-delay: 0s; }
@@ -71,10 +72,7 @@ const animationStyles = `
   .star:nth-child(18), .heart:nth-child(18) { left: 95%; animation-delay: 3.4s; }
   .star:nth-child(19), .heart:nth-child(19) { left: 5%; animation-delay: 3.6s; }
   .star:nth-child(20), .heart:nth-child(20) { left: 10%; animation-delay: 3.8s; }
-`;
-
-
-const FYBELandingPage = () => {
+`;const LandingPage = () => {
   const [isVisible, setIsVisible] = useState({});
   const [mbtiResult, setMbtiResult] = useState<string | null>(null);
   const [inputText, setInputText] = useState("");
@@ -461,4 +459,4 @@ const FYBELandingPage = () => {
   );
 };
 
-export default FYBELandingPage;
+export default LandingPage;
