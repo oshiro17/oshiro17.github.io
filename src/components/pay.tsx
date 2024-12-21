@@ -40,7 +40,7 @@ const PayCard: React.FC = () => {
       
       <div className="mt-8 text-center">
         <p className="text-purple-600 font-semibold">
-          もし何かくれたら大城はとても嬉しいでござる！
+        金は天下のまわりもの
         </p>
       </div>
     </div>

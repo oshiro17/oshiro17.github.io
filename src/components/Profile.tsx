@@ -5,7 +5,7 @@ const ProfileCard: React.FC = () => {
   return (
     <div className="bg-[#FFE4E1] p-8 rounded-lg max-w-2xl mx-auto">
       <h3 className="text-2xl font-semibold mb-4">大城希乃樺</h3>
-      <p className="mb-4">沖縄県立向陽高校卒業</p>
+      <p className="mb-4">沖縄県立向陽高校</p>
       <p className="mb-4">42Tokyo所属</p>
       
       <h4 className="text-xl font-semibold mb-2">好きな食べ物</h4>

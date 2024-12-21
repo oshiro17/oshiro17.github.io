@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://oshiro17.github.io/
-
-# Sitemaps
-Sitemap: https://oshiro17.github.io/sitemap.xml

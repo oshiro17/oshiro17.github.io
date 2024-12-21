@@ -256,7 +256,7 @@ const animationStyles = `
               大城ののかです。
             </p>
             <p className="text-xl md:text-2xl mb-8 max-w-4xl">
-              web開発、アプリケーション開発承ります
+              このサイトは、私の活動や制作物を紹介するためのものです。
             </p>
             <a href="#contact">
               <button className="bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 active:bg-[#FFE8b3] transition duration-300">
@@ -418,7 +418,7 @@ const animationStyles = `
                   value={inputText.replace("おおしろののか","")}
                   onChange={handleInputChange}
                   className="w-full px-3 py-2 border rounded mb-4"
-                  placeholder="名前をひらがなで入力してください"
+                  placeholder="あなたの名前をひらがなで入力してください"
                 />
                 <button  type="submit" className="bg-white text-black px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 active:bg-[#FFE8b3] transition duration-300">
                   OK
